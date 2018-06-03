@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         private fun callAlarm() {
             val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            val vibeTime: Long = 5000
+            val vibeTime: Long = 3000
             MediaPlayer.create(context, R.raw.horn).start()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 vibrator.vibrate(VibrationEffect.createOneShot(vibeTime, VibrationEffect.DEFAULT_AMPLITUDE))
