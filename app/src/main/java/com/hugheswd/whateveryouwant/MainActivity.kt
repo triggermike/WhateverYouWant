@@ -1,7 +1,8 @@
 package com.hugheswd.whateveryouwant
 
-import android.os.Bundle
-import android.os.CountDownTimer
+import android.content.Context
+import android.media.MediaPlayer
+import android.os.*
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
@@ -32,16 +33,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun countDown(num: Long) {
-        val timer = TheTimer(num * 1000, 1000 , mainText)
+        val timer = TheTimer(num * 1000, 1000 , mainText, this)
         timer.start()
     }
 
     private class TheTimer(interval: Long,
                            endTime: Long,
-                           val textView: TextView
-    ):CountDownTimer(interval, endTime) {
+                           val textView: TextView,
+                           val context: Context)
+        :CountDownTimer(interval, endTime) {
+
         override fun onFinish() {
-            textView.text = "DONE!!!!!!!"
+            callAlarm()
+            textView.text = context.getText(R.string.done)
+        }
+
+        private fun callAlarm() {
+            val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            val vibeTime: Long = 5000
+            MediaPlayer.create(context, R.raw.horn).start()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(vibeTime, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else vibrator.vibrate(vibeTime)
         }
 
         override fun onTick(millisUntilFinished: Long) {
