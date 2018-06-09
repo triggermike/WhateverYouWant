@@ -29,7 +29,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun timerStart() {
-        countDown(etMainUserInput.text.toString().toLong())
+        val input = etMainUserInput.text.toString()
+        if (!input.isBlank()) {
+            val num = input.toLong()
+            if (num != 0L) {
+                countDown(num)
+            } else {
+                mainText.text = getString(R.string.no_time)
+            }
+        } else {
+            mainText.text = getString(R.string.no_time)
+        }
     }
 
     private fun countDown(num: Long) {
