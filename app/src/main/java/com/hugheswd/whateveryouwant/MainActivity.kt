@@ -5,7 +5,6 @@ import android.media.MediaPlayer
 import android.os.*
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -69,7 +68,12 @@ class MainActivity : AppCompatActivity() {
 
         override fun onTick(millisUntilFinished: Long) {
             val timeLeft = millisUntilFinished / 1000
-            textView.text = timeLeft.toString()
+            val displayTime = timeLeft + 1
+            if (millisUntilFinished < 2000) {
+                textView.text = context.getString(R.string.almost_done)
+            } else {
+                textView.text = displayTime.toString()
+            }
         }
     }
 }
