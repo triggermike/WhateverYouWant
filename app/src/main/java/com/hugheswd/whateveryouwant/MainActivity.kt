@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         etMainUserInput.setOnKeyListener { v, keyCode, event ->
-            if(keyCode == EditorInfo.IME_NULL && event.action == KeyEvent.ACTION_UP){
+            if(keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN){
                 timerStart()
                 true
             }
