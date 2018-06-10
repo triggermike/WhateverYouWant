@@ -17,6 +17,7 @@ class TheTimer(interval: Long,
     override fun onFinish() {
         callAlarm()
         textView.text = context.getText(R.string.done)
+
     }
 
     private fun callAlarm() {
