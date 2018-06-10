@@ -3,6 +3,7 @@ package com.hugheswd.whateveryouwant
 import android.os.*
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -10,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Glide.with(this).load(R.drawable.bckgrnd).into(ivMainBackground)
 
         btnMainUserInput.setOnClickListener {
             timerStart()
