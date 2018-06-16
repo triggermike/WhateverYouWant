@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         if (!input.isBlank()) {
             val num = input.toLong()
             if (num != 0L) {
+                timer.cancel()
                 timer = TheTimer(num * 1000, endTime, this)
                 countDown()
                 clearTimerInputText()
