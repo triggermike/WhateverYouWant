@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private val endTime = 1000L
+    private var timer = TheTimer(endTime, endTime, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +20,10 @@ class MainActivity : AppCompatActivity() {
             timerStart()
         }
 
+        btnMainStop.setOnClickListener {
+            timerStop()
+        }
+
         etMainUserInput.setOnKeyListener { v, keyCode, event ->
             if(keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN){
                 timerStart()
@@ -27,22 +33,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun setMainText(text: String) {
+        mainText.text = text
+    }
+
+    fun clearTimerInputText() {
+        etMainUserInput.text.clear()
+    }
+
     private fun timerStart() {
         val input = etMainUserInput.text.toString()
         if (!input.isBlank()) {
             val num = input.toLong()
             if (num != 0L) {
-                countDown(num)
+                timer = TheTimer(num * 1000, endTime, this)
+                countDown()
+                clearTimerInputText()
             } else {
-                mainText.text = getString(R.string.no_time)
+                setMainText(getString(R.string.no_time))
             }
         } else {
-            mainText.text = getString(R.string.no_time)
+            setMainText(getString(R.string.no_time))
         }
     }
 
-    private fun countDown(num: Long) {
-        val timer = TheTimer(num * 1000, 1000 , mainText, this)
+    private fun timerStop() {
+        timer.cancel()
+        setMainText(getString(R.string.stop))
+        etMainUserInput.text.clear()
+        clearTimerInputText()
+    }
+
+    private fun countDown() {
         timer.start()
     }
 }
