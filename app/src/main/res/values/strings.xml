@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kotlin Timer</string>
+    <string name="app_name">Outta Time</string>
     <string name="user_input_hint">Enter Time in Seconds:</string>
     <string name="button_cd">Press button to start timer</string>
     <string name="done">Zero!! That airhorn scared the chips out of me…</string>
