@@ -14,15 +14,16 @@ class TheTimer(interval: Long,
     : CountDownTimer(interval, endTime) {
 
     override fun onFinish() {
-        callAlarm()
-        mainActivity.setMainText(mainActivity.getString(R.string.done))
+        val timerAlert = AlertList.getRandomAlert()
+        callAlarm(timerAlert.audioRes)
+        mainActivity.setMainText(mainActivity.getString(timerAlert.alertString))
         mainActivity.clearTimerInputText()
     }
 
-    private fun callAlarm() {
+    private fun callAlarm(audioRes: Int) {
         val vibrator = mainActivity.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val vibeTime: Long = 3000
-        MediaPlayer.create(mainActivity, R.raw.horn).start()
+        MediaPlayer.create(mainActivity, audioRes).start()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             vibrator.vibrate(VibrationEffect.createOneShot(vibeTime, VibrationEffect.DEFAULT_AMPLITUDE))
         } else vibrator.vibrate(vibeTime)
@@ -37,4 +38,5 @@ class TheTimer(interval: Long,
             mainActivity.setMainText(displayTime.toString())
         }
     }
+
 }
