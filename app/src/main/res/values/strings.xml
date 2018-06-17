@@ -6,4 +6,18 @@
     <string name="no_time">Please enter a time</string>
     <string name="almost_done">ALMOST!!</string>
     <string name="stop">How dare you interrupt me!!</string>
+
+    <string name="alert_alarm_clock">WAKE UP!! Wait, where am I?</string>
+    <string name="alert_alien">Probing stage complete</string>
+    <string name="alert_busted">Who\'s footprints are these?</string>
+    <string name="alert_coffees_done">Haha, meep meep!</string>
+    <string name="alert_crashburn">It\'s all over\.\.\.</string>
+    <string name="alert_dinner">I didn\'t know we were on a duck hunt.\.\.</string>
+    <string name="alert_horn">That airhorn scared the chips out of me.\.\.</string>
+    <string name="alert_industrial">OMG IT\'S A MELTDOWN! RUN FOR YOUR LIVES!!</string>
+    <string name="alert_macpan">Game Over. I meant the timer, the timer\'s over</string>
+    <string name="alert_ooga">OOOOOGA!!</string>
+    <string name="alert_pewpew">LASER PARTY! Why aren\'t you dancing?</string>
+    <string name="alert_squeep">What the hell was that?!?</string>
+    <string name="alert_super_storm">IT\'S MY JAM! DANCE!!</string>
 </resources>
