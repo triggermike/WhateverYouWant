@@ -1,6 +1,5 @@
-package com.hugheswd.whateveryouwant
+package com.hugheswd.outtatime
 
-import android.content.Context
 import java.util.*
 
 class TimerAlert (val alertString: Int, val audioRes: Int)

@@ -1,4 +1,4 @@
-package com.hugheswd.whateveryouwant
+package com.hugheswd.outtatime
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

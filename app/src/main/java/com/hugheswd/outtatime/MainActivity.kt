@@ -1,4 +1,4 @@
-package com.hugheswd.whateveryouwant
+package com.hugheswd.outtatime
 
 import android.os.*
 import android.support.v7.app.AppCompatActivity

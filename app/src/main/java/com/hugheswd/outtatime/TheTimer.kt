@@ -1,4 +1,4 @@
-package com.hugheswd.whateveryouwant
+package com.hugheswd.outtatime
 
 import android.content.Context
 import android.media.MediaPlayer
