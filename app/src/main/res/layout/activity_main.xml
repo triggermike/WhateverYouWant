@@ -79,29 +79,33 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/button_cd"
+        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/etMainUserInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toEndOf="@+id/etMainUserInput"
         app:layout_constraintTop_toTopOf="@+id/etMainUserInput"
-        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+        app:srcCompat="@android:drawable/ic_media_play" />
 
     <ImageButton
         android:id="@+id/btnMainStop"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorBackground"
-        android:src="@android:drawable/btn_dialog"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/button_stp"
+        android:src="@android:drawable/ic_media_pause"
+        android:tint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/btnMainUserInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toEndOf="@+id/btnMainUserInput"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintTop_toTopOf="@+id/btnMainUserInput" />
 
 </android.support.constraint.ConstraintLayout>

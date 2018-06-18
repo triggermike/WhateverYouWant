@@ -2,6 +2,7 @@
     <string name="app_name">Outta Time</string>
     <string name="user_input_hint">Enter Time in Seconds:</string>
     <string name="button_cd">Press button to start timer</string>
+    <string name="button_stp">Press button to cancel timer</string>
     <string name="done">Zero!! That airhorn scared the chips out of me…</string>
     <string name="no_time">Please enter a time</string>
     <string name="almost_done">ALMOST!!</string>
