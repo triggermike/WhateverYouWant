@@ -24,10 +24,9 @@ class MainActivity : AppCompatActivity() {
             timerStop()
         }
 
-        etMainUserInput.setOnKeyListener { v, keyCode, event ->
+        etMainUserInput.setOnKeyListener {v, keyCode, event ->
             if(keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN){
                 timerStart()
-                true
             }
             false
         }
@@ -52,9 +51,11 @@ class MainActivity : AppCompatActivity() {
                 clearTimerInputText()
             } else {
                 setMainText(getString(R.string.no_time))
+                clearTimerInputText()
             }
         } else {
             setMainText(getString(R.string.no_time))
+            clearTimerInputText()
         }
     }
 
