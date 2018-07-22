@@ -1,5 +1,6 @@
 package com.hugheswd.outtatime
 
+import android.content.Intent
 import android.os.*
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         btnMainStop.setOnClickListener {
             timerStop()
+        }
+
+        btnSettings.setOnClickListener {
+            launchMenu()
         }
 
         etMainUserInput.setOnKeyListener {v, keyCode, event ->
@@ -68,5 +73,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun countDown() {
         timer.start()
+    }
+
+    private fun launchMenu() {
+        val thisIntent = Intent(this, SettingsActivity::class.java)
+        startActivity(thisIntent)
     }
 }
