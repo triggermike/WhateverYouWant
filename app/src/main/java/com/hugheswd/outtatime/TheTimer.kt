@@ -30,13 +30,7 @@ class TheTimer(interval: Long,
     }
 
     override fun onTick(millisUntilFinished: Long) {
-        val timeLeft = millisUntilFinished / 1000
-        val displayTime = timeLeft + 1
-        if (millisUntilFinished < 2000) {
-            mainActivity.setMainText(mainActivity.getString(R.string.almost_done))
-        } else {
-            mainActivity.setMainText(displayTime.toString())
-        }
+        val displayTime = millisUntilFinished / 1000 + 1
+        mainActivity.setMainText(displayTime.toString())
+       }
     }
-
-}
