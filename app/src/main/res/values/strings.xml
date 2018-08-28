@@ -20,6 +20,8 @@
     <string name="alert_pewpew">LASER PARTY! Why aren\'t you dancing?</string>
     <string name="alert_squeep">What the hell was that?!?</string>
     <string name="alert_super_storm">IT\'S MY JAM! DANCE!!</string>
+    <string name="button_settings">contentDescription</string>
+    <string name="bkgrnd_main">contentDescription</string>
 
     <array name="settings_options">
         <item>Alarm</item>
