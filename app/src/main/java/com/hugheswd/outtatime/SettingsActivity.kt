@@ -6,6 +6,8 @@ import android.widget.ArrayAdapter
 import java.util.*
 import kotlinx.android.synthetic.main.activity_settings.*
 
+/* Implementation of text view for settings menu
+ */
 
 class SettingsActivity : AppCompatActivity() {
 
