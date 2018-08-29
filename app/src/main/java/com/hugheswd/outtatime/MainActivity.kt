@@ -75,8 +75,6 @@ class MainActivity : AppCompatActivity() {
         timer.start()
     }
 
-    private fun launchMenu() {
-        val thisIntent = Intent(this, SettingsActivity::class.java)
-        startActivity(thisIntent)
-    }
+    private fun launchMenu() = startActivity(Intent(this, SettingsActivity::class.java))
+
 }
